@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile 
+    container_name: django_helloworld
+    command: sh -c "python manage.py runserver 0.0.0.0:9001 --insecure"
+    restart: always
+    volumes:
+      - /app
+    ports:
+      - "9001:9001"
